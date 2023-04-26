@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import contarato from '../contracts/produtos.contract'
+import contarato from '../contracts/usuarios.contract '
 import { faker } from '@faker-js/faker'
 let token
 
@@ -28,7 +28,7 @@ describe('Testes da Funcionalidade Usuários', () => {
                "nome": nomeFaker,
                "email": emailFaker,
                "password": "teste",
-               "administrador": "false"
+               "administrador": "true"
              }
          }).then(response => {
           expect(response.status).to.equal(201)
