@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clonar repositório') {
+            steps {
+                git branch: 'aula-ci', url: 'https://github.com/EBAC-QE/testes-api-cy.git'            }
+        }
+        stage('Instalar dependências'){
+            steps {
+                bat 'npm install'
+            }
+        }
+        stage('Executar teste'){
+            steps {
+                echo 'npm run cy:run-ci | true npm run cy:run-ci'
+            }
+        }
+    }
+
+}
