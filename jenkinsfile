@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Executar teste'){
             steps {
-                echo 'npm run cy:run-ci | true npm run cy:run-ci'
+                bat 'npm run cy:run-ci | true npm run cy:run-ci'
             }
         }
     }
