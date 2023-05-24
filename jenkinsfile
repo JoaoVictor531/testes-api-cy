@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clonar repositório') {
             steps {
-                git branch: 'aula-ci', url: 'https://github.com/EBAC-QE/testes-api-cy.git'            }
+                git branch: 'aula-ci', url: 'https://github.com/JoaoVictor531/testes-api-cy.git'            }
         }
         stage('Instalar dependências'){
             steps {
@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Executar teste'){
             steps {
-                bat 'npm run cy:run-ci | true npm run cy:run-ci'
+                bat 'npm run cy:run-ci'
             }
         }
     }
